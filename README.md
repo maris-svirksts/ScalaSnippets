@@ -1,0 +1,2 @@
+# ScalaSnippets
+ Various code snippets.
