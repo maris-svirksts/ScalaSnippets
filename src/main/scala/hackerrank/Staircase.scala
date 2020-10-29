@@ -1,6 +1,6 @@
 package hackerrank
 
-object Solution {
+object Staircase {
 
   // Complete the staircase function below.
   def staircase(n: Int) {
