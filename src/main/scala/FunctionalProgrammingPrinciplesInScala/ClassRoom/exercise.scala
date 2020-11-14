@@ -1,4 +1,4 @@
-package FunctionalProgrammingPrinciplesInScala
+package FunctionalProgrammingPrinciplesInScala.ClassRoom
 
 abstract class IntSet {
   def incl(x: Int): IntSet
