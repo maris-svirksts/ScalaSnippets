@@ -148,3 +148,38 @@ object nQueens {
 }
 
 nQueens.queens(4) map nQueens.show
+
+trait Generator[+T]{
+  self =>
+  def generate:T
+  def map[S](f: T => S): Generator[S] = new Generator[S]{
+    def generate: S = f(self.generate)
+  }
+  def flatMap[S](f: T => Generator[S]): Generator[S] = new Generator[S]{
+    def generate: S = f(self.generate).generate
+  }
+}
+
+/*object generators {
+  import patmat.Leaf
+
+  val integers = new Generator[Int] {
+    def generate = scala.util.Random.nextInt()
+  }
+
+  val booleans = integers.map(_ >= 0)
+
+  def leafs: Generator[Leaf] = for {
+    x <- integers
+  } yield Leaf(x)
+
+  def inners: Generator[Inner] = for {
+    l <- trees
+    r <- trees
+  } yield Inner(l, r)
+
+  def trees: Generator[Tree] = for {
+    isLeaf <- booleans
+    tree <- if(isLeaf) leafs else inners
+  } yield tree
+}*/
