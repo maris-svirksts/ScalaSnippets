@@ -1,4 +1,4 @@
-package patmat
+ package patmat
 
 import scala.annotation.tailrec
 
