@@ -3,7 +3,7 @@ package hackerrank
 import scala.annotation.tailrec
 import scala.io.StdIn
 
-object Solution {
+object StringCompression {
   @tailrec
   def loop(str: String, charToCheck: Char, counter: Int, resultList: List[String]): List[String] = {
     if(str.isEmpty) {
