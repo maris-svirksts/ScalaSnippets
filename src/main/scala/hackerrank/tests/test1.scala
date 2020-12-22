@@ -3,13 +3,12 @@ package hackerrank.tests
 
 
 import java.io._
-
 import scala.annotation.tailrec
 import scala.io._
 
 
 
-object Result {
+object ResultTest1 {
 
   /*
    * Complete the 'filledOrders' function below.
@@ -33,7 +32,7 @@ object Result {
 
 }
 
-object Solution {
+object SolutionTest1 {
   def main(args: Array[String]): Unit = {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
@@ -48,7 +47,7 @@ object Solution {
 
     val k = StdIn.readLine.trim.toInt
 
-    val result = Result.filledOrders(order, k)
+    val result = ResultTest1.filledOrders(order, k)
 
     printWriter.println(result)
 
