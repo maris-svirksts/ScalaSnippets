@@ -9,15 +9,15 @@ object TheHurdleRace {
     height.map(x => if(x - k < 0) 0 else x - k).max
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val nk = stdin.readLine.split(" ")
-    val k  = nk(1).trim.toInt
+    val nk = stdin.readLine().split(" ")
+    val k = nk(1).trim.toInt
 
-    val height = stdin.readLine.split(" ").map(_.trim.toInt)
+    val height = stdin.readLine().split(" ").map(_.trim.toInt)
     val result = hurdleRace(k, height)
 
     printWriter.println(result)

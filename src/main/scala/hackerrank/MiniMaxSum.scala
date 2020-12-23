@@ -13,7 +13,7 @@ object MiniMaxSum {
   def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
-    val arr = stdin.readLine.split(" ").map(_.trim.toLong)
+    val arr = stdin.readLine().split(" ").map(_.trim.toLong)
     miniMaxSum(arr)
   }
 }

@@ -13,12 +13,12 @@ object BeautifulDaysAtTheMovies {
     }).count(_ == 0)
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val ijk = stdin.readLine.split(" ")
+    val ijk = stdin.readLine().split(" ")
 
     val i = ijk(0).trim.toInt
 

@@ -25,9 +25,9 @@ object DrawingBook {
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val n = stdin.readLine.trim.toInt
+    val n = stdin.readLine().trim.toInt
 
-    val p = stdin.readLine.trim.toInt
+    val p = stdin.readLine().trim.toInt
 
     val result = pageCount(n, p)
 

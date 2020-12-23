@@ -36,16 +36,16 @@ object SolutionTest1 {
   def main(args: Array[String]): Unit = {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val orderCount = StdIn.readLine.trim.toInt
+    val orderCount = StdIn.readLine().trim.toInt
 
     val order = Array.ofDim[Int](orderCount)
 
     for (i <- 0 until orderCount) {
-      val orderItem = StdIn.readLine.trim.toInt
+      val orderItem = StdIn.readLine().trim.toInt
       order(i) = orderItem
     }
 
-    val k = StdIn.readLine.trim.toInt
+    val k = StdIn.readLine().trim.toInt
 
     val result = ResultTest1.filledOrders(order, k)
 

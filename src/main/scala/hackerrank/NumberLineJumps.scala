@@ -1,7 +1,6 @@
 package hackerrank
 
 import java.io._
-
 import scala.annotation.tailrec
 
 object NumberLineJumps {
@@ -25,7 +24,7 @@ object NumberLineJumps {
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val x1V1X2V2 = stdin.readLine.split(" ")
+    val x1V1X2V2 = stdin.readLine().split(" ")
     val x1 = x1V1X2V2(0).trim.toInt
     val v1 = x1V1X2V2(1).trim.toInt
     val x2 = x1V1X2V2(2).trim.toInt

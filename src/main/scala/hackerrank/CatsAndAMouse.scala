@@ -14,15 +14,15 @@ object CatsAndAMouse {
     else "Mouse C"
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val q = stdin.readLine.trim.toInt
+    val q = stdin.readLine().trim.toInt
 
     for (qItr <- 1 to q) {
-      val xyz = stdin.readLine.split(" ")
+      val xyz = stdin.readLine().split(" ")
 
       val x = xyz(0).trim.toInt
 

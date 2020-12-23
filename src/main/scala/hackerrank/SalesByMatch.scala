@@ -14,9 +14,9 @@ object SalesByMatch {
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val n = stdin.readLine.trim.toInt
+    val n = stdin.readLine().trim.toInt
 
-    val ar = stdin.readLine.split(" ").map(_.trim.toInt)
+    val ar = stdin.readLine().split(" ").map(_.trim.toInt)
     val result = sockMerchant(n, ar)
 
     printWriter.println(result)

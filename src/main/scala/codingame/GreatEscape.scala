@@ -70,7 +70,7 @@ object Player1 extends App {
       else if (i == 1) playerTwo(counter) = Array(x, y, wallsLeft)
       else if (i == 2) playerThree(counter) = Array(x, y, wallsLeft)
     }
-    val wallCount = readLine.toInt // number of walls on the board
+    val wallCount = readLine().toInt // number of walls on the board
     for (i <- 0 until wallCount) {
       // wallX: x-coordinate of the wall
       // wallY: y-coordinate of the wall

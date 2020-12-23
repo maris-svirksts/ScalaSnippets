@@ -24,7 +24,7 @@ object DiagonalDifference {
 
 }
 
-object Solution {
+object SolutionDiagonalDifference {
   def main(args: Array[String]): Unit = {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 

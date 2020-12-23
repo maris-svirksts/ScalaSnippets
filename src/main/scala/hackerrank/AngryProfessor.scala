@@ -10,18 +10,18 @@ object AngryProfessor {
     else "NO"
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val t = stdin.readLine.trim.toInt
+    val t = stdin.readLine().trim.toInt
 
     for (tItr <- 1 to t) {
-      val nk = stdin.readLine.split(" ")
-      val k  = nk(1).trim.toInt
+      val nk = stdin.readLine().split(" ")
+      val k = nk(1).trim.toInt
 
-      val a      = stdin.readLine.split(" ").map(_.trim.toInt)
+      val a = stdin.readLine().split(" ").map(_.trim.toInt)
       val result = angryProfessor(k, a)
 
       printWriter.println(result)

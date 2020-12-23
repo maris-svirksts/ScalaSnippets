@@ -17,10 +17,10 @@ object SubArrayDivision {
   def main(args: Array[String]) {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val n = StdIn.readLine.trim.toInt
+    val n = StdIn.readLine().trim.toInt
 
-    val s = StdIn.readLine.replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
-    val dm = StdIn.readLine.replaceAll("\\s+$", "").split(" ")
+    val s = StdIn.readLine().replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
+    val dm = StdIn.readLine().replaceAll("\\s+$", "").split(" ")
 
     val d = dm(0).toInt
 

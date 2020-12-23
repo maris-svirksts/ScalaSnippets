@@ -1,7 +1,6 @@
 package hackerrank
 
 import java.io.PrintWriter
-
 import scala.annotation.tailrec
 import scala.io.StdIn
 
@@ -52,15 +51,15 @@ object BetweenTwoSetsResult {
 }
 
 object BetweenTwoSets {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val firstMultipleInput = StdIn.readLine.replaceAll("\\s+$", "").split(" ")
+    val firstMultipleInput = StdIn.readLine().replaceAll("\\s+$", "").split(" ")
     val n = firstMultipleInput(0).toInt
     val m = firstMultipleInput(1).toInt
 
-    val arr = StdIn.readLine.replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
-    val brr = StdIn.readLine.replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
+    val arr = StdIn.readLine().replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
+    val brr = StdIn.readLine().replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
 
     val total = BetweenTwoSetsResult.getTotalX(arr, brr)
 

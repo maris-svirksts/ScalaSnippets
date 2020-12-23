@@ -17,15 +17,15 @@ object UtopianTree {
     loop(0, 1)
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val t = stdin.readLine.trim.toInt
+    val t = stdin.readLine().trim.toInt
 
     for (tItr <- 1 to t) {
-      val n = stdin.readLine.trim.toInt
+      val n = stdin.readLine().trim.toInt
 
       val result = utopianTree(n)
 

@@ -1,7 +1,6 @@
 package hackerrank.tests
 
 import java.io.PrintWriter
-
 import scala.io.StdIn
 
 
@@ -46,7 +45,7 @@ object SolutionTest2 {
 
     val s = StdIn.readLine
 
-    val k = StdIn.readLine.trim.toInt
+    val k = StdIn.readLine().trim.toInt
 
     val result = ResultTest2.findSubstring(s, k)
 

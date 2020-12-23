@@ -13,7 +13,7 @@ object Staircase {
   def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
-    val n = stdin.readLine.trim.toInt
+    val n = stdin.readLine().trim.toInt
 
     staircase(n)
   }

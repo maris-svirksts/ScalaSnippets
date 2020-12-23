@@ -1,7 +1,6 @@
 package hackerrank
 
 import java.io._
-
 import scala.annotation.tailrec
 
 object DivisiveSumPairs {
@@ -20,18 +19,18 @@ object DivisiveSumPairs {
     loop(ar.tail, ar, 0)
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val nk = stdin.readLine.split(" ")
+    val nk = stdin.readLine().split(" ")
 
     val n = nk(0).trim.toInt
 
     val k = nk(1).trim.toInt
 
-    val ar = stdin.readLine.split(" ").map(_.trim.toInt)
+    val ar = stdin.readLine().split(" ").map(_.trim.toInt)
     val result = divisibleSumPairs(n, k, ar)
 
     printWriter.println(result)

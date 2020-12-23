@@ -1,7 +1,6 @@
 package hackerrank
 
 import java.io._
-
 import scala.annotation.tailrec
 
 object BreakingTheRecords {
@@ -20,14 +19,14 @@ object BreakingTheRecords {
     loop(scores.tail, List(scores.head), List(scores.head))
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val n = stdin.readLine.trim.toInt
+    val n = stdin.readLine().trim.toInt
 
-    val scores = stdin.readLine.split(" ").map(_.trim.toInt)
+    val scores = stdin.readLine().split(" ").map(_.trim.toInt)
     val result = breakingRecords(scores)
 
     printWriter.println(result.mkString(" "))

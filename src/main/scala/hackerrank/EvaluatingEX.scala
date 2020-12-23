@@ -19,10 +19,10 @@ object EvaluatingEX {
   def main(args: Array[String]) {
     val stdin = scala.io.StdIn
 
-    val n = stdin.readLine.trim.toInt
+    val n = stdin.readLine().trim.toInt
 
     for (nItr <- 1 to n) {
-      val x: Double       = stdin.readLine.trim.toDouble
+      val x: Double = stdin.readLine().trim.toDouble
       val results: Double = loop(x, 1, 1, 1)
 
       println(results)

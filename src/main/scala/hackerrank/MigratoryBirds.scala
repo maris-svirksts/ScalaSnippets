@@ -16,9 +16,9 @@ object MigratoryBirds {
   def main(args: Array[String]) {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val arrCount = StdIn.readLine.trim.toInt
+    val arrCount = StdIn.readLine().trim.toInt
 
-    val arr = StdIn.readLine.replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
+    val arr = StdIn.readLine().replaceAll("\\s+$", "").split(" ").map(_.trim.toInt)
     val result = migratoryBirds(arr)
 
     printWriter.println(result)

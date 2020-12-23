@@ -2,8 +2,9 @@ package hackerrank
 
 import java.io._
 
-object Solution {
+object DesignerPDFViewer {
   val alphabet: Seq[Char] = 'a' to 'z'
+
   // Complete the designerPdfViewer function below.
   def designerPdfViewer(h: Array[Int], word: String): Int = {
     val listOfValues: Seq[Int] = word.map(x => {
@@ -13,12 +14,12 @@ object Solution {
     listOfValues.max * listOfValues.length
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val h = stdin.readLine.split(" ").map(_.trim.toInt)
+    val h = stdin.readLine().split(" ").map(_.trim.toInt)
     val word = stdin.readLine
 
     val result = designerPdfViewer(h, word)

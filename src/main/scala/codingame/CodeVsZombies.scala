@@ -1,5 +1,3 @@
-import math._
-import scala.util._
 import scala.io.StdIn._
 
 /**
@@ -39,7 +37,7 @@ object Player extends App {
   // game loop
   while (true) {
     val Array(x, y) = (readLine split " ").map(_.toInt)
-    val humanCount = readLine.toInt
+    val humanCount = readLine().toInt
     val humanList = Array.ofDim[Int](humanCount, 3)
 
     for (i <- 0 until humanCount) {
@@ -47,7 +45,7 @@ object Player extends App {
       Console.err.println(s"${humanList(i)(1)} ${humanList(i)(2)}")
     }
 
-    val zombieCount = readLine.toInt
+    val zombieCount = readLine().toInt
     val zombieList = Array.ofDim[Int](zombieCount, 5)
     for (i <- 0 until zombieCount) {
       zombieList(i) = (readLine split " ").map(_.toInt)

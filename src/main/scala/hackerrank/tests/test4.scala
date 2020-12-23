@@ -23,10 +23,10 @@ object test4 {
   }
 
   object test4Solution {
-    def main(args: Array[String]) {
+    def main(args: Array[String]): Unit = {
       val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-      val usernamesCount = StdIn.readLine.trim.toInt
+      val usernamesCount = StdIn.readLine().trim.toInt
 
       val usernames = Array.ofDim[String](usernamesCount)
 
