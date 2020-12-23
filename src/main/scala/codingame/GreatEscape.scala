@@ -1,5 +1,6 @@
 package codingame
 
+import scala.annotation.tailrec
 import scala.io.StdIn._
 
 /**
@@ -19,9 +20,10 @@ object Player1 extends App {
   val wallList = Array.ofDim[String](w * 2, 3)
   var counter: Int = 0
 
+  @tailrec
   def placeWall(playerId: Int, location: Int, secondaryPlayerId: Int): Unit = {
     playerId match {
-      case 0 => {
+      case 0 =>
         val x: Int =
           if (playerOne(location)(0) < 7) playerOne(location)(0) + 1
           else playerOne(location)(0)
@@ -30,8 +32,7 @@ object Player1 extends App {
         if (!wallList.contains(Array(x.toString, y.toString, "V")))
           println(s"$x $y V")
         else placeWall(secondaryPlayerId, location, -1)
-      }
-      case 1 => {
+      case 1 =>
         val x: Int = playerTwo(location)(0)
         val y: Int =
           if (playerTwo(location)(1) <= 7) playerTwo(location)(1)
@@ -40,8 +41,7 @@ object Player1 extends App {
         if (!wallList.contains(Array(x.toString, y.toString, "V")))
           println(s"$x $y V")
         else placeWall(secondaryPlayerId, location, -1)
-      }
-      case 2 => {
+      case 2 =>
         val x: Int = playerThree(location)(0)
         val y: Int = {
           if (playerThree(location)(1) < 7) playerThree(location)(1) + 1
@@ -52,7 +52,6 @@ object Player1 extends App {
         if (!wallList.contains(Array(x.toString, y.toString, "H")))
           println(s"$x $y H")
         else placeWall(secondaryPlayerId, location, -1)
-      }
     }
   }
 
