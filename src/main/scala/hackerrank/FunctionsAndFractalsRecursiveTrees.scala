@@ -3,7 +3,8 @@ package hackerrank
 import scala.annotation.tailrec
 import scala.io.StdIn.readLine
 
-object Solution {
+// Requirement was to do it without val / var.
+object FunctionsAndFractalsRecursiveTrees {
   @tailrec
   def init(counter: Int, branchHeight: Int, totalHeight: Int, startingPoint: List[Int], elements: Int, results: List[List[Char]]): List[List[Char]] = {
     @tailrec
