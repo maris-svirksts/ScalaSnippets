@@ -27,7 +27,7 @@ object Result {
 
 }
 
-object Solution {
+object LeftRotation {
   def main(args: Array[String]): Unit = {
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 

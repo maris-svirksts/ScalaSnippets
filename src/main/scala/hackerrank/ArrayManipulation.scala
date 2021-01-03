@@ -3,34 +3,36 @@ package hackerrank
 import java.io._
 import scala.annotation.tailrec
 
-object Solution {
+//Arrays are instrumental here: Lists take too long.
+object ArrayManipulation {
   @tailrec
-  def applyManipulations(playingField: List[BigInt], queries: Array[Array[BigInt]]): BigInt = {
+  def applyManipulations(playingField: Array[Long], queries: Array[Array[Long]]): Long = {
     if(queries.isEmpty) {
-      playingField.scanLeft(BigInt(0))(_ + _).filter(_ != 0).max
+      val result = playingField.filter(_ != 0).scanLeft(0L)(_ + _)
+      result.max
     }
     else {
-      val startIndice: BigInt = queries.head(0) - 1
-      val endIndice: BigInt   = queries.head(1)
+      val startIndice: Long = queries.head(0) - 1
+      val endIndice:   Long = queries.head(1)
 
-      val positiveResult: BigInt = playingField(startIndice.toInt) + queries.head(2)
-      val negativeResult: BigInt = playingField(endIndice.toInt) - queries.head(2)
+      val positiveResult: Long = playingField(startIndice.toInt) + queries.head(2)
+      val negativeResult: Long = playingField(endIndice.toInt) - queries.head(2)
 
-      val startedPlayingField = playingField.updated(startIndice.toInt, positiveResult)
-      val updatedPlayingField = startedPlayingField.updated(endIndice.toInt, negativeResult)
+      playingField(startIndice.toInt) = positiveResult
+      playingField(endIndice.toInt)   = negativeResult
 
-      applyManipulations(updatedPlayingField, queries.tail)
+      applyManipulations(playingField, queries.tail)
     }
   }
 
   // Complete the arrayManipulation function below.
-  def arrayManipulation(n: Int, queries: Array[Array[BigInt]]): BigInt = {
-    val playingField = List.fill(n + 1)(BigInt(0))
+  def arrayManipulation(n: Int, queries: Array[Array[Long]]): Long = {
+    val playingField = Array.fill(n + 1)(0L)
 
     applyManipulations(playingField, queries)
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
@@ -40,10 +42,10 @@ object Solution {
     val n = nm(0).trim.toInt
     val m = nm(1).trim.toInt
 
-    val queries = Array.ofDim[BigInt](m, 3)
+    val queries = Array.ofDim[Long](m, 3)
 
     for (i <- 0 until m) {
-      queries(i) = stdin.readLine.split(" ").map(BigInt(_))
+      queries(i) = stdin.readLine.split(" ").map(_.toLong)
     }
 
     val result = arrayManipulation(n, queries)

@@ -2,7 +2,7 @@ package hackerrank
 
 import scala.annotation.tailrec
 
-object Solution {
+object OrderExercises {
 
   def main(args: Array[String]): Unit = {
     val read = scala.io.StdIn
