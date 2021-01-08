@@ -1,4 +1,4 @@
-package hackerrank
+package hackerrank.DaysOfCode
 
 //Write your code here
 class Calculator() {
