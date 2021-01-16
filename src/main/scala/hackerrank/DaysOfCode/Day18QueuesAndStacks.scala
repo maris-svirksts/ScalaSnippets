@@ -24,7 +24,7 @@ class Solution {
 }
 
 object Day18QueuesAndStacks {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     // read the string s
     var s=scala.io.StdIn.readLine()
     // create the Solution class object p
@@ -47,7 +47,7 @@ object Day18QueuesAndStacks {
       for(i<- 0 to len/2){
         if(obj.popCharacter()!=obj.dequeueCharacter()){
           isPalindrome=false
-          loop.break
+          loop.break()
         }
       }
     }

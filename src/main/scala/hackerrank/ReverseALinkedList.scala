@@ -70,15 +70,15 @@ object ReverseALinkedList {
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val tests = stdin.readLine.trim.toInt
+    val tests = stdin.readLine().trim.toInt
 
     for (testsItr <- 1 to tests) {
       val llist = new SinglyLinkedList()
 
-      val llistCount = stdin.readLine.trim.toInt
+      val llistCount = stdin.readLine().trim.toInt
 
       for (_ <- 0 until llistCount) {
-        val llistItem = stdin.readLine.trim.toInt
+        val llistItem = stdin.readLine().trim.toInt
         llist.insertNode(llistItem)
       }
 

@@ -37,7 +37,7 @@ object ArrayManipulation {
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val nm = stdin.readLine.split(" ")
+    val nm = stdin.readLine().split(" ")
 
     val n = nm(0).trim.toInt
     val m = nm(1).trim.toInt
@@ -45,7 +45,7 @@ object ArrayManipulation {
     val queries = Array.ofDim[Long](m, 3)
 
     for (i <- 0 until m) {
-      queries(i) = stdin.readLine.split(" ").map(_.toLong)
+      queries(i) = stdin.readLine().split(" ").map(_.toLong)
     }
 
     val result = arrayManipulation(n, queries)

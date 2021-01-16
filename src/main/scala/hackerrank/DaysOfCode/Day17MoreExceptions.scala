@@ -9,7 +9,7 @@ class Calculator() {
 }
 
 object Day17MoreExceptions {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val myCalculator = new Calculator()
     var T = scala.io.StdIn.readLine().toInt
 

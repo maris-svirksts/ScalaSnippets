@@ -76,15 +76,15 @@ object ReverseADoublyLinkedList {
 
     val printWriter = new PrintWriter(sys.env("OUTPUT_PATH"))
 
-    val t = stdin.readLine.trim.toInt
+    val t = stdin.readLine().trim.toInt
 
     for (tItr <- 1 to t) {
       val llist = new DoublyLinkedList()
 
-      val llistCount = stdin.readLine.trim.toInt
+      val llistCount = stdin.readLine().trim.toInt
 
       for (_ <- 0 until llistCount) {
-        val llistItem = stdin.readLine.trim.toInt
+        val llistItem = stdin.readLine().trim.toInt
         llist.insertNode(llistItem)
       }
 
