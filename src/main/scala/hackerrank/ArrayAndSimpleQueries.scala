@@ -17,17 +17,16 @@ object ArrayAndSimpleQueries {
     else {
       commands.head match {
         case Command.ToFront(start, end) =>
-          val _@(before: Array[Long], continue: Array[Long]) = data.splitAt(start)
-          val _@(current: Array[Long], after: Array[Long]) = continue.splitAt(end - start + 1)
-          System.err.println("before: " + before.toList + ", current: " + current.toList + " , after: " + after.toList)
-          loop(commands.tail, current ++ before ++ after)
+          val before:  Array[Long] = data.slice(0, start)
+          val current: Array[Long] = data.slice(start, end)
+          val after:   Array[Long] = data.slice(end, data.length)
+          loop(commands.tail, Array(current, before, after).flatten)
 
         case Command.ToBack(start, end) =>
-          val _@(before: Array[Long], continue: Array[Long]) = data.splitAt(start)
-          val _@(current: Array[Long], after: Array[Long]) = continue.splitAt(end - start + 1)
-          System.err.println("before: " + before.toList + ", current: " + current.toList + " , after: " + after.toList)
-          loop(commands.tail, before ++ after ++ current)
-
+          val before:  Array[Long] = data.slice(0, start)
+          val current: Array[Long] = data.slice(start, end)
+          val after:   Array[Long] = data.slice(end, data.length)
+          loop(commands.tail, Array(before, after, current).flatten)
       }
     }
   }
@@ -42,8 +41,8 @@ object ArrayAndSimpleQueries {
       _ <- 1 to nm(1)
       data = readLine().trim.split(" ").map(_.toInt)
     } yield data match {
-      case _ if data(0) == 1 => Command.ToFront(data(1) - 1, data(2) - 1)
-      case _ if data(0) == 2 => Command.ToBack(data(1) - 1, data(2) - 1)
+      case _ if data(0) == 1 => Command.ToFront(data(1) - 1, data(2))
+      case _ if data(0) == 2 => Command.ToBack(data(1) - 1, data(2))
     }
 
     val results: Array[Long] = loop(input, elementArray)
@@ -52,3 +51,4 @@ object ArrayAndSimpleQueries {
     println(results.mkString(" "))
   }
 }
+
