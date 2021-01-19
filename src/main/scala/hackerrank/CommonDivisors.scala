@@ -1,5 +1,6 @@
 package hackerrank
 
+// https://rosettacode.org/wiki/Proper_divisors#Scala
 import scala.annotation.tailrec
 import scala.io.StdIn.readLine
 
