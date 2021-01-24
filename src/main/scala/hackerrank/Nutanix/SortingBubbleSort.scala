@@ -28,9 +28,9 @@ object SortingBubbleSort {
     loop(0, a.to(ArrayBuffer), List())
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
-    val n     = stdin.readLine.trim.toInt
+    val _     = stdin.readLine.trim.toInt
     val a     = stdin.readLine.split(" ").map(_.trim.toInt)
 
     val _@(swaps, elements) = countSwaps(a)

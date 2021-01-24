@@ -26,7 +26,7 @@ object HashTablesIceCreamParlor {
     sortAndWalkInward(0, options.length - 1).sorted
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val stdin = scala.io.StdIn
 
     val t = stdin.readLine.trim.toInt
