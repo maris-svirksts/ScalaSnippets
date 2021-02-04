@@ -5,7 +5,7 @@ import scala.io._
 
 
 
-object test4 {
+object PossibleChanges {
 
   /*
    * Complete the 'possibleChanges' function below.
@@ -35,7 +35,7 @@ object test4 {
         usernames(i) = usernamesItem
       }
 
-      val result = test4.possibleChanges(usernames)
+      val result = PossibleChanges.possibleChanges(usernames)
 
       printWriter.println(result.mkString("\n"))
 
