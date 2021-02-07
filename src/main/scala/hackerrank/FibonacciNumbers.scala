@@ -16,7 +16,7 @@ object FibonacciNumbers {
     else loop(List(1, 0), x)
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     /** This will handle the input and output**/
     println(fibonacci(StdIn.readInt()))
   }
