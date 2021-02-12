@@ -29,7 +29,7 @@ object EquivalentResistanceCircuitBuilding extends App {
       val nextSeries       = next.indexWhere(_ == currentType)
       val (current, after) = next.splitAt(nextSeries)
 
-      val sum = current.map(x => x.toString.toFloat).sum
+      val sum: Float = if(currentType == ")") current.map(x => x.toString.toFloat).sum else 1 / current.map(x => 1 / x.toString.toFloat).sum
 
       calculateResults(before.init.appended(sum) ++ after.tail)
     }
